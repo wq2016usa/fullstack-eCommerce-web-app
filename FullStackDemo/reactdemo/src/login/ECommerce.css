@@ -1,0 +1,104 @@
+.product-grid{
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-card img {
+max-width: 100%;
+height: 150px;
+margin-bottom: 10px;
+}
+
+.updated_form .form-group{
+  display: flex;
+  width: 100px; /* Adjust the width as needed */
+  
+  /* margin-right: 10px; */
+}
+
+.updated_form button{
+  display: inline-block;
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.deleteBtn{
+  background-color: red;
+}
+
+
+/* Optional: If you want to align labels and input fields horizontally */
+.form-group label {
+  display: flex;
+  width: 20px;
+  text-align: left;
+  font-size: 10px;
+  margin-right: 40px;
+}
+
+.form-group input{
+  height: 90%;
+}
+
+.add_new_product_form label{
+  margin-right: 15px;
+}
+
+.add_new_product_form label input{
+  margin-left: 5px;
+}
+
+.each_order{
+  border: 1px solid #000;
+  width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.each_order img{
+  max-width: 30%;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.products_in_order{
+  display: flex;
+}
+
+.products_in_order p{
+  margin-right: 10px;
+}
+
+.user{
+  /* display: flex; */
+  border: 1px solid #000;
+  width: 60%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.products_in_admin{
+  display: flex;
+  border: 1px solid #000;
+  width: 60%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.products_in_admin img{
+  max-width: 30%;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.products_in_admin p{
+  margin-right: 10px;
+}
