@@ -89,15 +89,32 @@ const AdminMgtHome =  () => {
         setProducts(updatedProducts);
       };
 
+      const handleLogout = async () => {
+        try {
+          // Send a request to your server to logout
+          await fetch('http://localhost:8080/ehome/logout', {
+            method: 'POST',
+            credentials: 'include', // Include credentials (cookies) in the request
+          });
+    
+          // Clear cookies on the client side
+          document.cookie = 'accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+          document.cookie = 'refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    
+          // Redirect or perform other actions after logout
+          window.location.href = '/'; // Redirect to the login page, for example
+        } catch (error) {
+          console.error('Error during logout:', error);
+        }
+    };
+
     return(
         <div className="home_page">
           <header>
           <h1>E-Commerce Admin Management</h1>
-          {/* <nav>
-              <a href="/">Home</a>
-              <a href="/products">Products</a>
-              <a href="/cart">Cart</a>
-          </nav> */}
+          <nav>
+                <button onClick={handleLogout}>Logout</button>
+            </nav>
           </header>
           <hr style={{ width: '100%', margin: '10px 0', borderTop: '1px solid #ddd' }} />
           {loading ? (
