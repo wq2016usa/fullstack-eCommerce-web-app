@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
+const apiUrl = "http://localhost:8080";
 const UserOrdersDetails = ({userId, cart}) =>{
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
         // Fetch product data from the backend API
-        fetch(`http://localhost:8080/ehome/view_order&userId=${userId}`)
+        fetch(`${apiUrl}/ehome/view_order&userId=${userId}`)
           .then((response) => response.json())
           .then((data) => {
             setAllOrders(data);

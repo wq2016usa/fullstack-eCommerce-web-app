@@ -5,6 +5,7 @@ import AdminUserOrdersDetails from './AdminUserOrdersDetails';
 import './ECommerce.css';
 
 const AdminMgtHome =  () => {
+  const apiUrl = "http://localhost:8080";
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -17,7 +18,7 @@ const AdminMgtHome =  () => {
 
     useEffect(() => {
         // Fetch product data from the backend API
-        fetch('http://localhost:8080/ehome_admin')
+        fetch(`${apiUrl}/ehome_admin`)
           .then((response) => response.json())
           .then((data) => {
             setProducts(data);
@@ -43,7 +44,7 @@ const AdminMgtHome =  () => {
         // }
 
         // Send a POST request to the Spring Boot backend
-        const response = await fetch('http://localhost:8080/ehome_admin/admin_management_page/store_new_product', {
+        const response = await fetch(`${apiUrl}/ehome_admin/admin_management_page/store_new_product`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -92,7 +93,7 @@ const AdminMgtHome =  () => {
       const handleLogout = async () => {
         try {
           // Send a request to your server to logout
-          await fetch('http://localhost:8080/ehome/logout', {
+          await fetch(`${apiUrl}/ehome/logout`, {
             method: 'POST',
             credentials: 'include', // Include credentials (cookies) in the request
           });

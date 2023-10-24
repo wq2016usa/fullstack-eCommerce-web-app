@@ -3,6 +3,7 @@ import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import Login from './Login';
 import ECommerceHome from './ECommerceHome';
 
+const apiUrl = "http://localhost:8080";
 const SignUp = () =>{
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
@@ -31,7 +32,7 @@ const SignUp = () =>{
         }else{
 
             // Send a POST request to the Spring Boot backend
-            const response = await fetch('http://localhost:8080/ehome/store', {
+            const response = await fetch(`${apiUrl}/ehome/store`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import UserOrdersDetails from './UserOrdersDetails';
 import './ECommerce.css';
 
+const apiUrl = "http://localhost:8080";
 const products = [
     { id: 1, name: 'Product 1', price: 19.99 },
     { id: 2, name: 'Product 2', price: 29.99 },
@@ -53,7 +54,7 @@ const ECommerceHome =  () =>{
   
     useEffect(() => {
         // Fetch product data from the backend API
-        fetch(`http://localhost:8080/ehome/${user_id}`)
+        fetch(`${apiUrl}/ehome/${user_id}`)
           .then((response) => response.json())
           .then((data) => {
             setProducts(data);
@@ -92,7 +93,7 @@ const ECommerceHome =  () =>{
             console.log(productsIdArr)
             //sending the order to a server
             // Send a POST request to the Spring Boot backend
-            const response = await fetch('http://localhost:8080/ehome/save_order', {
+            const response = await fetch(`${apiUrl}/ehome/save_order`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -122,7 +123,7 @@ const ECommerceHome =  () =>{
     const handleLogout = async () => {
         try {
           // Send a request to your server to logout
-          await fetch('http://localhost:8080/ehome/logout', {
+          await fetch(`${apiUrl}/ehome/logout`, {
             method: 'POST',
             credentials: 'include', // Include credentials (cookies) in the request
           });

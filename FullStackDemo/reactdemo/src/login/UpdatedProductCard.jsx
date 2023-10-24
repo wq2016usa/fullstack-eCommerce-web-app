@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+const apiUrl = "http://localhost:8080";
 const UpdatedProductCard = ({ product, isUpdate }) => {
     const [updatedProductName, setUpdatedProductName] = useState('');
     const [updatedProductPrice, setUpdatedProductPrice] = useState(null);
@@ -10,7 +11,7 @@ const UpdatedProductCard = ({ product, isUpdate }) => {
     const updateProduct = async(e) =>{
         e.preventDefault();
     
-        const response = await fetch(`http://localhost:8080/ehome_admin/admin_management_page/update=${product.productId}`, {
+        const response = await fetch(`${apiUrl}/ehome_admin/admin_management_page/update=${product.productId}`, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
@@ -44,7 +45,7 @@ const UpdatedProductCard = ({ product, isUpdate }) => {
     const deleteProduct = async(e) =>{
         e.preventDefault();
 
-        const response = await fetch(`http://localhost:8080/ehome_admin/admin_management_page/delete=${product.productId}`, {
+        const response = await fetch(`${apiUrl}/ehome_admin/admin_management_page/delete=${product.productId}`, {
           method: 'DELETE',
           headers: {
               'Content-Type': 'application/json',

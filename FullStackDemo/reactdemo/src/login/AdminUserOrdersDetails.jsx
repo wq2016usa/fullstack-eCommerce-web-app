@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+
+const apiUrl = "http://localhost:8080";
 const AdminUserOrdersDetails = () =>{
     const [allUsers, setAllUsers] = useState([]);
     const [allOrders, setAllOrders] = useState([]);
@@ -8,7 +10,7 @@ const AdminUserOrdersDetails = () =>{
 
     useEffect(() => {
         // Fetch product data from the backend API
-        fetch(`http://localhost:8080/ehome_admin/all_users`)
+        fetch(`${apiUrl}/ehome_admin/all_users`)
           .then((response) => response.json())
           .then((data) => {
             setAllUsers(data);
@@ -17,7 +19,7 @@ const AdminUserOrdersDetails = () =>{
             console.error('Error fetching product data:', error);
         });
 
-        fetch(`http://localhost:8080/ehome_admin/all_orders`)
+        fetch(`${apiUrl}/ehome_admin/all_orders`)
             .then((response) => response.json())
             .then((orders) => {
                 setAllOrders(orders)

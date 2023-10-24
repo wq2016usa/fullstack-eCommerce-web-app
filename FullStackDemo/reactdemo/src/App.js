@@ -3,9 +3,9 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
 import Login from './login/Login';
-
+const apiUrl = process.env.REACT_URL;
 function App() {
-  const apiUrl = "http://localhost:8080/student";
+  const apiUrl = `${apiUrl}/student`;
   const [students, setStudents] = useState([]);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
