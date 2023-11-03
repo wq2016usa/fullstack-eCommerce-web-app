@@ -3,7 +3,7 @@ import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import Login from './Login';
 import ECommerceHome from './ECommerceHome';
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = "http://23.22.243.101:8080";
 const SignUp = () =>{
     const navigate = useNavigate();
     const [username, setUsername] = useState('');

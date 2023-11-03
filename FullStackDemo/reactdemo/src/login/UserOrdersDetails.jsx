@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = "http://23.22.243.101:8080";
 const UserOrdersDetails = ({userId, cart}) =>{
     const [allOrders, setAllOrders] = useState([]);
 

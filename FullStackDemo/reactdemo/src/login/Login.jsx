@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import SignUp from './SignUp';
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = "http://23.22.243.101:8080";
 const Login = () =>{
     const navigate = useNavigate();
     const [username, setUsername] = useState('');

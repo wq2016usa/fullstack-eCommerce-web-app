@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import UserOrdersDetails from './UserOrdersDetails';
 import './ECommerce.css';
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = "http://23.22.243.101:8080";
 const products = [
     { id: 1, name: 'Product 1', price: 19.99 },
     { id: 2, name: 'Product 2', price: 29.99 },

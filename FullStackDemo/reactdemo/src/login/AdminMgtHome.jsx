@@ -5,7 +5,7 @@ import AdminUserOrdersDetails from './AdminUserOrdersDetails';
 import './ECommerce.css';
 
 const AdminMgtHome =  () => {
-  const apiUrl = "http://localhost:8080";
+  const apiUrl = "http://23.22.243.101:8080";
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);

@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://localhost:3000") // Replace with your frontend's URL
+            .allowedOrigins("http://ecommerce-fullstack-test.s3-website-us-east-1.amazonaws.com/") // Replace with your frontend's URL
             .allowedMethods("GET", "POST", "PUT", "DELETE")
             .allowCredentials(true);
     }

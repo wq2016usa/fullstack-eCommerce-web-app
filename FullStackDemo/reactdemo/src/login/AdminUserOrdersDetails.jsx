@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = "http://23.22.243.101:8080";
 const AdminUserOrdersDetails = () =>{
     const [allUsers, setAllUsers] = useState([]);
     const [allOrders, setAllOrders] = useState([]);
